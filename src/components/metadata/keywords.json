@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_metadata_keywords",
+  "info": {
+    "displayName": "keywords",
+    "icon": "stack"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "singleType",
+  "collectionName": "facility_pages",
+  "info": {
+    "singularName": "facility-page",
+    "pluralName": "facility-pages",
+    "displayName": "Facility_Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "hero_banner": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "metadata": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "metadata.metadata",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}

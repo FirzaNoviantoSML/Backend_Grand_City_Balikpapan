@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "news_promos",
+  "info": {
+    "singularName": "news-promo",
+    "pluralName": "news-promos",
+    "displayName": "News_Promo_Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "hero_banner": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    },
+    "metadata": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "metadata.metadata",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_spesifikasi_spesifikasis",
+  "info": {
+    "displayName": "spesifikasi"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "item": {
+      "type": "component",
+      "component": "spesifikasi.item",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

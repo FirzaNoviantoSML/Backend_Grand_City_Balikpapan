@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_metadata_metadata",
+  "info": {
+    "displayName": "Metadata"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "title_image": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Keywords": {
+      "type": "component",
+      "component": "metadata.keywords",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}
