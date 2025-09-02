@@ -58,9 +58,9 @@ export interface MetadataMetadata extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    Keywords: Schema.Attribute.Component<'metadata.keywords', true> &
+    keywords: Schema.Attribute.Component<'metadata.keywords', true> &
       Schema.Attribute.Required;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     title_image: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

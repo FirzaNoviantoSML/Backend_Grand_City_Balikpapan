@@ -50,6 +50,7 @@
         }
       },
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
@@ -67,10 +68,11 @@
       "type": "media",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
