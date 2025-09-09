@@ -47,6 +47,19 @@
       "component": "metadata.metadata",
       "repeatable": false,
       "required": true
+    },
+    "hero_banner_mobile": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

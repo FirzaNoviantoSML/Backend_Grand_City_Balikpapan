@@ -992,6 +992,13 @@ export interface ApiFacilityPageFacilityPage extends Struct.SingleTypeSchema {
           localized: false;
         };
       }>;
+    hero_banner_mobile: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
