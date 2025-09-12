@@ -1180,7 +1180,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::home-page.home-page'
     >;
-    metadata: Schema.Attribute.Component<'metadata.metadata', true> &
+    metadata: Schema.Attribute.Component<'metadata.metadata', false> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
