@@ -133,7 +133,7 @@
         }
       },
       "component": "metadata.metadata",
-      "repeatable": true,
+      "repeatable": false,
       "required": true
     }
   }

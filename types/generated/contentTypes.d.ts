@@ -657,7 +657,7 @@ export interface ApiConceptConcept extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::concept.concept'
     >;
-    metadata: Schema.Attribute.Component<'metadata.metadata', true> &
+    metadata: Schema.Attribute.Component<'metadata.metadata', false> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -911,6 +911,12 @@ export interface ApiDevelopmentDevelopment extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    release_date: Schema.Attribute.Date &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     siteplan_gallery: Schema.Attribute.Media<'images', true> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -1212,6 +1218,46 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
           localized: false;
         };
       }>;
+  };
+}
+
+export interface ApiMessageMessage extends Struct.CollectionTypeSchema {
+  collectionName: 'messages';
+  info: {
+    displayName: 'Message';
+    pluralName: 'messages';
+    singularName: 'message';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cluster_code: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    development: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::development.development'
+    >;
+    email: Schema.Attribute.String & Schema.Attribute.Required;
+    fullname: Schema.Attribute.String & Schema.Attribute.Required;
+    lead_source: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::message.message'
+    > &
+      Schema.Attribute.Private;
+    message: Schema.Attribute.Text & Schema.Attribute.Required;
+    phone: Schema.Attribute.String & Schema.Attribute.Required;
+    project_code: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    utm: Schema.Attribute.Text;
+    web: Schema.Attribute.String;
   };
 }
 
@@ -1983,6 +2029,7 @@ declare module '@strapi/strapi' {
       'api::facility.facility': ApiFacilityFacility;
       'api::footer.footer': ApiFooterFooter;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::message.message': ApiMessageMessage;
       'api::news-promo.news-promo': ApiNewsPromoNewsPromo;
       'api::residential-page.residential-page': ApiResidentialPageResidentialPage;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;

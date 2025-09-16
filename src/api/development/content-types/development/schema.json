@@ -159,6 +159,14 @@
       "component": "metadata.metadata",
       "repeatable": false,
       "required": true
+    },
+    "release_date": {
+      "type": "date",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
