@@ -23,11 +23,6 @@
       "type": "string",
       "required": true
     },
-    "development": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::development.development"
-    },
     "message": {
       "type": "text",
       "required": true
@@ -49,6 +44,10 @@
     },
     "web": {
       "type": "string"
+    },
+    "project_name": {
+      "type": "string",
+      "required": true
     }
   }
 }

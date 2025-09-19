@@ -853,6 +853,13 @@ export interface ApiDevelopmentDevelopment extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    cluster_code: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -904,6 +911,13 @@ export interface ApiDevelopmentDevelopment extends Struct.CollectionTypeSchema {
         };
       }>;
     metadata: Schema.Attribute.Component<'metadata.metadata', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    project_code: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1236,10 +1250,6 @@ export interface ApiMessageMessage extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    development: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::development.development'
-    >;
     email: Schema.Attribute.String & Schema.Attribute.Required;
     fullname: Schema.Attribute.String & Schema.Attribute.Required;
     lead_source: Schema.Attribute.String;
@@ -1252,6 +1262,7 @@ export interface ApiMessageMessage extends Struct.CollectionTypeSchema {
     message: Schema.Attribute.Text & Schema.Attribute.Required;
     phone: Schema.Attribute.String & Schema.Attribute.Required;
     project_code: Schema.Attribute.String & Schema.Attribute.Required;
+    project_name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
